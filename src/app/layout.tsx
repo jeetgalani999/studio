@@ -1,15 +1,13 @@
 import type { Metadata } from 'next';
-import { GeistSans } from 'next/font/google'; // Corrected import for GeistSans
+import { GeistSans } from 'geist/font/sans'; // Import GeistSans from the geist package
 import './globals.css';
 import { AppHeader } from '@/components/AppHeader';
 import { AppFooter } from '@/components/AppFooter';
 import { Toaster } from '@/components/ui/toaster';
-import { ThemeProvider } from '@/components/ThemeProvider'; // Added ThemeProvider
+import { ThemeProvider } from '@/components/ThemeProvider';
 
-const geistSans = GeistSans({ // Corrected initialization
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+// The GeistSans object from 'geist/font/sans' directly provides .variable and .className
+// No need to call it as a function like with next/font/google
 
 export const metadata: Metadata = {
   title: 'DevSpace Folio - App Developer Portfolio',
@@ -23,7 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} font-sans antialiased`}>
+      {/* Use GeistSans.variable directly */}
+      <body className={`${GeistSans.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
