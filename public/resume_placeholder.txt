@@ -1,0 +1,3 @@
+This is a placeholder for your resume.
+Please replace this file with 'resume.pdf' in the 'public' directory.
+Make sure your ResumeDownloadButton.tsx component links to 'resume.pdf'.
