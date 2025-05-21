@@ -4,11 +4,9 @@ const featuredProjects: Project[] = [
   {
     id: '1',
     title: 'Service Provider App',
-    description: 'A cross-platform mobile app for booking home services like cleaning, plumbing, and more. Features client and provider modules with real-time chat via sockets.',
+    description: 'A cross-platform mobile app for booking home services like cleaning, plumbing, and more. Developed client and provider modules, and integrated real-time chat using sockets.',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'home services',
-    liveLink: '#', // Placeholder, update if you have a live link
-    repoLink: '#', // Placeholder, update if you have a repo link
     techStack: ['Cross-Platform', 'Mobile App', 'Sockets', 'Real-time Chat'],
   },
   {
@@ -17,18 +15,14 @@ const featuredProjects: Project[] = [
     description: 'An interactive social media application with post creation, likes, comments, and user following. Includes direct messaging with real-time chat, built using Bloc for scalable architecture.',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'social network',
-    liveLink: '#', // Placeholder, update if you have a live link
-    repoLink: '#', // Placeholder, update if you have a repo link
     techStack: ['Mobile App', 'Bloc Pattern', 'Real-time Chat', 'Social Features'],
   },
   {
     id: '3',
     title: 'Event Planner App',
-    description: 'A simple and intuitive Flutter app for managing personal events and reminders. Users can create event notes with details and view them on a calendar-based UI.',
+    description: 'A simple and intuitive Flutter app for managing personal events and reminders. Users can create event notes and view them on a calendar-based UI.',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'calendar schedule',
-    liveLink: '#', // Placeholder, update if you have a live link
-    repoLink: '#', // Placeholder, update if you have a repo link
     techStack: ['Flutter', 'Mobile App', 'Event Management', 'Calendar UI'],
   },
 ];

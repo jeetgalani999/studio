@@ -1,9 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
 
 export interface Project {
   id: string;
@@ -11,8 +8,6 @@ export interface Project {
   description: string;
   imageUrl: string;
   dataAiHint: string;
-  liveLink?: string;
-  repoLink?: string;
   techStack: string[];
 }
 
@@ -50,22 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-end gap-2 border-t pt-4">
-        {project.liveLink && (
-          <Button asChild variant="outline" size="sm">
-            <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-            </Link>
-          </Button>
-        )}
-        {project.repoLink && (
-          <Button asChild variant="default" size="sm">
-            <Link href={project.repoLink} target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-4 w-4" /> Repository
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
+      {/* CardFooter with buttons has been removed */}
     </Card>
   );
 }
