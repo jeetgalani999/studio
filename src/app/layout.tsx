@@ -10,8 +10,8 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 // No need to call it as a function like with next/font/google
 
 export const metadata: Metadata = {
-  title: 'DevSpace Folio - Mobile App Developer Portfolio',
-  description: 'Portfolio of a Mobile App Developer showcasing projects, skills, and expertise.',
+  title: 'Jeet Galani - Mobile App Developer Portfolio',
+  description: 'Portfolio of Jeet Galani, a Mobile App Developer showcasing projects, skills, and expertise.',
 };
 
 export default function RootLayout({

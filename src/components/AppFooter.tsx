@@ -8,7 +8,7 @@ export function AppFooter() {
     <footer className="border-t bg-background">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
         <p className="text-sm text-muted-foreground">
-          &copy; {currentYear} DevSpace Folio. All rights reserved.
+          &copy; {currentYear} Jeet Galani. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           <Link href="https://github.com/jeetgalani999/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

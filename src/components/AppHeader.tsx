@@ -29,7 +29,7 @@ export function AppHeader() {
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#home" className="flex items-center gap-2">
           <Code className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold">DevSpace Folio</span>
+          <span className="text-xl font-bold">Jeet Galani</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
