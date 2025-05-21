@@ -10,7 +10,6 @@ import { useTheme } from 'next-themes';
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Projects', href: '#projects' },
-  { label: 'AI Summarizer', href: '#ai-summarizer' },
   { label: 'Contact', href: '#contact' },
 ];
 

@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/project-description-generator.ts';
+// Removed import for project-description-generator.ts as the file is being deleted.
