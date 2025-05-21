@@ -2,8 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image'; // Added for the logo
-import { Menu, Moon, Sun, X } from 'lucide-react'; // Removed Code from imports
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState, useEffect } from 'react';
@@ -30,11 +29,10 @@ export function AppHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#home" className="flex items-center gap-2">
-          {/* <Code className="h-8 w-8 text-primary" /> Removed Code icon */}
           <span className="text-xl font-bold">Jeet Galani</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-4 text-sm font-medium"> {/* Reduced gap from 6 to 4 to accommodate logo */}
+        <nav className="hidden md:flex items-center gap-4 text-sm font-medium">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -44,30 +42,14 @@ export function AppHeader() {
               {item.label}
             </Link>
           ))}
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/logo.jpeg?alt=media&token=bcbc90c6-e960-4262-9b40-6f47337f1b74"
-            alt="Logo"
-            width={32}
-            height={32}
-            data-ai-hint="logo"
-            className="ml-2" // Added some margin for spacing from nav items
-          />
           {mounted && (
-            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme" className="ml-2">
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           )}
         </nav>
 
         <div className="md:hidden flex items-center">
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/logo.jpeg?alt=media&token=bcbc90c6-e960-4262-9b40-6f47337f1b74"
-            alt="Logo"
-            width={32}
-            height={32}
-            data-ai-hint="logo"
-            className="mr-2"
-          />
            {mounted && (
             <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme" className="mr-2">
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
