@@ -11,7 +11,6 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Projects', href: '#projects' },
   { label: 'AI Summarizer', href: '#ai-summarizer' },
-  { label: 'Articles', href: '#articles' },
   { label: 'Contact', href: '#contact' },
 ];
 

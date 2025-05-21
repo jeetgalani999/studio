@@ -1,7 +1,6 @@
 import { HeroSection } from '@/components/HeroSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { AISummarizerSection } from '@/components/AISummarizerSection';
-import { ArticlesSection } from '@/components/ArticlesSection';
 import { ContactSection } from '@/components/ContactSection';
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <HeroSection />
       <ProjectsSection />
       <AISummarizerSection />
-      <ArticlesSection />
       <ContactSection />
     </>
   );
