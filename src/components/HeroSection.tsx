@@ -29,7 +29,7 @@ export function HeroSection() {
             alt="Jeet Galani - Mobile App Developer"
             width={300}
             height={300}
-            className="rounded-full object-cover shadow-lg"
+            className="rounded-full object-contain shadow-lg"
             data-ai-hint="portrait"
             priority
           />
