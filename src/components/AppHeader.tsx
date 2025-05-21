@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import { useRouter, usePathname } from 'next/navigation'; // Import useRouter and usePathname
+import { usePathname } from 'next/navigation'; 
 
 const navItems = [
   { label: 'Home', href: '/', sectionId: 'home' },
@@ -18,8 +18,7 @@ export function AppHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const router = useRouter(); // useRouter for programmatic navigation if needed
-  const pathname = usePathname(); // usePathname to get current path
+  const pathname = usePathname(); 
 
   useEffect(() => setMounted(true), []);
 
@@ -36,34 +35,34 @@ export function AppHeader() {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      window.history.pushState(null, '', href); // Update URL without page reload
+      window.history.pushState(null, '', href); 
     } else if (href === '/') {
-      // Special case for home, scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
       window.history.pushState(null, '', href);
     }
     setIsMobileMenuOpen(false);
   };
 
-  // Effect to scroll to section if path matches on initial load or popstate
   useEffect(() => {
     const currentNavItem = navItems.find(item => item.href === pathname && item.href !== '/');
     if (currentNavItem) {
-      const element = document.getElementById(currentNavItem.sectionId);
-      if (element) {
-        // Slight delay to ensure layout is stable for scrolling
-        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
-      }
+      // Delay finding and scrolling to the element to give the page more time to render,
+      // especially with AnimatedMainContent.
+      setTimeout(() => {
+        const element = document.getElementById(currentNavItem.sectionId);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 150); // Increased delay slightly
     } else if (pathname === '/') {
-        // If it's the root path and not a specific section, ensure top of page.
-        // This might be redundant if HeroSection is already at the top.
-        // window.scrollTo({ top: 0, behavior: 'smooth' });
+        // For the root path, scroll to top if not already there.
+        // This might be handled by default browser behavior or if HeroSection is at the top.
+        // setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 150);
     }
 
     const handlePopState = () => {
       const popStateNavItem = navItems.find(item => item.href === window.location.pathname && item.href !== '/');
       if (popStateNavItem) {
-        document.getElementById(popStateNavItem.sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById(popStateNavItem.sectionId);
+        element?.scrollIntoView({ behavior: 'smooth' });
       } else if (window.location.pathname === '/') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
