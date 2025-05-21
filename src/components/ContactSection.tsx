@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -17,7 +18,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, Send, Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { sendContactMessage, type SendContactMessageResponse } from '@/actions/sendContactFormAction';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -30,6 +32,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 export function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formResponse, setFormResponse] = useState<SendContactMessageResponse | undefined>();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -42,17 +45,42 @@ export function ContactSection() {
 
   async function onSubmit(values: ContactFormData) {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    setFormResponse(undefined); // Clear previous response
 
-    console.log('Contact form submitted:', values); // In a real app, send this data to a backend
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+    const formData = new FormData();
+    formData.append('name', values.name);
+    formData.append('email', values.email);
+    formData.append('message', values.message);
+
+    const response = await sendContactMessage(undefined, formData);
+    setFormResponse(response);
     setIsSubmitting(false);
   }
+
+  useEffect(() => {
+    if (formResponse) {
+      if (formResponse.success) {
+        toast({
+          title: 'Message Sent!',
+          description: formResponse.message || "Thanks for reaching out. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'Submission Failed',
+          description: formResponse.message || 'Something went wrong. Please try again.',
+        });
+        // Set form errors if they exist
+        if (formResponse.errors) {
+          if (formResponse.errors.name) form.setError('name', { type: 'server', message: formResponse.errors.name.join(', ') });
+          if (formResponse.errors.email) form.setError('email', { type: 'server', message: formResponse.errors.email.join(', ') });
+          if (formResponse.errors.message) form.setError('message', { type: 'server', message: formResponse.errors.message.join(', ') });
+        }
+      }
+    }
+  }, [formResponse, toast, form]);
+
 
   return (
     <section id="contact" className="w-full py-12 md:py-20 lg:py-24 bg-secondary">
@@ -151,6 +179,9 @@ export function ContactSection() {
                     )}
                     Send Message
                   </Button>
+                   {formResponse && !formResponse.success && formResponse.errors?.general && (
+                    <p className="text-sm font-medium text-destructive">{formResponse.errors.general}</p>
+                  )}
                 </form>
               </Form>
             </CardContent>
