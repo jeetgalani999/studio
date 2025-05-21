@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, MapPin, Phone, Send, Loader2 } from 'lucide-react';
+import { Mail, Phone, Send, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 
 const contactFormSchema = z.object({
@@ -69,7 +69,7 @@ export function ContactSection() {
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
-              <CardDescription>Feel free to reach out via email, phone, or find me online.</CardDescription>
+              <CardDescription>Feel free to reach out via email or phone.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-start gap-4">
@@ -86,13 +86,6 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-semibold">Phone</h4>
                   <p className="text-muted-foreground">786-203-6443</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
-                <div>
-                  <h4 className="font-semibold">Location</h4>
-                  <p className="text-muted-foreground">City, Country (Remote friendly)</p>
                 </div>
               </div>
             </CardContent>
