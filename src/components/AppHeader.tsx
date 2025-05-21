@@ -9,9 +9,9 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const navItems = [
-  { label: 'Home', href: '/home' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export function AppHeader() {
@@ -28,7 +28,7 @@ export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/home" className="flex items-center gap-2">
+        <Link href="#home" className="flex items-center gap-2">
           <span className="text-xl font-bold">Jeet Galani</span>
         </Link>
 
