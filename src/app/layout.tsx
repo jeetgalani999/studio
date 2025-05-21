@@ -6,7 +6,7 @@ import { AppHeader } from '@/components/AppHeader';
 import { AppFooter } from '@/components/AppFooter';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { AnimatedMainContent } from '@/components/AnimatedMainContent'; // Import the new component
+import { AnimatedMainContent } from  '@/components/AnimatedMainContent'; // Import the new component
 
 // The GeistSans object from 'geist/font/sans' directly provides .variable and .className
 // No need to call it as a function like with next/font/google
