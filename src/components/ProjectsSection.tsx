@@ -3,33 +3,33 @@ import { ProjectCard, type Project } from '@/components/ProjectCard';
 const featuredProjects: Project[] = [
   {
     id: '1',
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform with product listings, cart functionality, and secure payments.',
+    title: 'Service Provider App',
+    description: 'A cross-platform mobile app for booking home services like cleaning, plumbing, and more. Features client and provider modules with real-time chat via sockets.',
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'online shopping',
-    liveLink: '#',
-    repoLink: '#',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
+    dataAiHint: 'home services',
+    liveLink: '#', // Placeholder, update if you have a live link
+    repoLink: '#', // Placeholder, update if you have a repo link
+    techStack: ['Cross-Platform', 'Mobile App', 'Sockets', 'Real-time Chat'],
   },
   {
     id: '2',
-    title: 'Task Management App',
-    description: 'A collaborative task management tool to help teams organize and track their work efficiently.',
+    title: 'Social Media App',
+    description: 'An interactive social media application with post creation, likes, comments, and user following. Includes direct messaging with real-time chat, built using Bloc for scalable architecture.',
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'productivity tool',
-    liveLink: '#',
-    repoLink: '#',
-    techStack: ['React', 'Firebase', 'Node.js', 'Material UI'],
+    dataAiHint: 'social network',
+    liveLink: '#', // Placeholder, update if you have a live link
+    repoLink: '#', // Placeholder, update if you have a repo link
+    techStack: ['Mobile App', 'Bloc Pattern', 'Real-time Chat', 'Social Features'],
   },
   {
     id: '3',
-    title: 'AI Powered Blog',
-    description: 'A content platform that uses AI to suggest topics and generate article outlines.',
+    title: 'Event Planner App',
+    description: 'A simple and intuitive Flutter app for managing personal events and reminders. Users can create event notes with details and view them on a calendar-based UI.',
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'artificial intelligence writing',
-    liveLink: '#',
-    repoLink: '#',
-    techStack: ['Python', 'Flask', 'OpenAI API', 'Vue.js'],
+    dataAiHint: 'calendar schedule',
+    liveLink: '#', // Placeholder, update if you have a live link
+    repoLink: '#', // Placeholder, update if you have a repo link
+    techStack: ['Flutter', 'Mobile App', 'Event Management', 'Calendar UI'],
   },
 ];
 
