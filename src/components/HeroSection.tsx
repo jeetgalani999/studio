@@ -9,10 +9,10 @@ export function HeroSection() {
       <div className="container mx-auto grid max-w-screen-xl items-center gap-8 px-4 md:grid-cols-2 md:px-6 lg:gap-16">
         <div className="space-y-6 text-center md:text-left">
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            Hi, I&apos;m A Developer
+            Hi, I&apos;m a Mobile App Developer
           </h1>
           <p className="text-lg text-muted-foreground md:text-xl">
-            I specialize in crafting modern, responsive, and user-friendly applications. 
+            I specialize in crafting modern, responsive, and user-friendly applications.
             Let&apos;s build something amazing together.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
