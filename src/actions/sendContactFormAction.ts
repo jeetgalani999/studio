@@ -85,5 +85,6 @@ export async function sendContactMessage(
   // For now, we'll just simulate a successful submission after a short delay
   // Remove this simulation when you implement actual email sending.
   await new Promise(resolve => setTimeout(resolve, 1500));
-  return { success: true, message: 'Message submitted successfully! (Simulation)' };
+  return { success: true, message: 'Message submitted successfully!' };
 }
+
