@@ -24,12 +24,12 @@ export function HeroSection() {
         </div>
         <div className="flex justify-center md:order-first">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/logo.jpeg?alt=media&token=bcbc90c6-e960-4262-9b40-6f47337f1b74"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/toolxox.com-ZzvLE.jpg?alt=media&token=78c23796-17f5-48c2-8aaf-b412335e828c"
             alt="Jeet Galani - Mobile App Developer"
             width={400}
             height={400}
             className="rounded-full object-cover shadow-lg"
-            data-ai-hint="logo"
+            data-ai-hint="portrait"
             priority
           />
         </div>
