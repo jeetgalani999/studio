@@ -25,7 +25,19 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Removed rewrites as we are using real pages now
+  async rewrites() {
+    return [
+      {
+        source: '/projects',
+        destination: '/',
+      },
+      {
+        source: '/contact',
+        destination: '/',
+      },
+      // Add other section paths here if needed
+    ];
+  },
 };
 
 export default nextConfig;
