@@ -45,7 +45,7 @@ export function AppHeader() {
             </Link>
           ))}
           <Image
-            src="https://placehold.co/32x32.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/logo.jpeg?alt=media&token=bcbc90c6-e960-4262-9b40-6f47337f1b74"
             alt="Logo"
             width={32}
             height={32}
@@ -61,7 +61,7 @@ export function AppHeader() {
 
         <div className="md:hidden flex items-center">
           <Image
-            src="https://placehold.co/32x32.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/logo.jpeg?alt=media&token=bcbc90c6-e960-4262-9b40-6f47337f1b74"
             alt="Logo"
             width={32}
             height={32}
