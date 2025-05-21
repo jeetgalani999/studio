@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans'; // Import GeistSans from the geist package
 import './globals.css';
@@ -5,6 +6,7 @@ import { AppHeader } from '@/components/AppHeader';
 import { AppFooter } from '@/components/AppFooter';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { AnimatedMainContent } from '@/components/AnimatedMainContent'; // Import the new component
 
 // The GeistSans object from 'geist/font/sans' directly provides .variable and .className
 // No need to call it as a function like with next/font/google
@@ -31,7 +33,8 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen flex-col">
             <AppHeader />
-            <main className="flex-grow">{children}</main>
+            {/* Replace plain main with AnimatedMainContent */}
+            <AnimatedMainContent>{children}</AnimatedMainContent>
             <AppFooter />
           </div>
           <Toaster />
