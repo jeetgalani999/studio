@@ -1,3 +1,4 @@
+
 import { ProjectCard, type Project } from '@/components/ProjectCard';
 
 const featuredProjects: Project[] = [
@@ -10,8 +11,8 @@ const featuredProjects: Project[] = [
   {
     id: '2',
     title: 'Social Media App',
-    description: 'An interactive social media application with post creation, likes, comments, and user following. Includes direct messaging with real-time chat, built using BLoC for scalable state management.',
-    techStack: ['Mobile App', 'BLoC State Management', 'Real-time Chat', 'Social Features'],
+    description: 'An interactive social media application with post creation, likes, comments, and user following. Includes direct messaging with real-time chat, built using Bloc for scalable state management.',
+    techStack: ['Mobile App', 'Bloc State Management', 'Real-time Chat', 'Social Features'],
   },
   {
     id: '3',
