@@ -1,3 +1,4 @@
+
 "use client"
 
 // Inspired by react-hot-toast library
@@ -9,7 +10,8 @@ import type {
 } from "@/components/ui/toast"
 
 const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000000
+const TOAST_REMOVE_DELAY = 1000000 // Time after a toast is marked for dismissal before it's removed from state
+const TOAST_DURATION = 2000 // Time a toast is visible before auto-dismissal
 
 type ToasterToast = ToastProps & {
   id: string
@@ -159,10 +161,15 @@ function toast({ ...props }: Toast) {
       id,
       open: true,
       onOpenChange: (open) => {
-        if (!open) dismiss()
+        if (!open) dismiss() // Handles manual close (e.g., clicking 'X')
       },
     },
   })
+
+  // Automatically dismiss the toast after TOAST_DURATION
+  setTimeout(() => {
+    dismiss()
+  }, TOAST_DURATION)
 
   return {
     id: id,
