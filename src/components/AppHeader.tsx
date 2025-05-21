@@ -2,6 +2,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image'; // Added Image import
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -25,6 +26,8 @@ export function AppHeader() {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
+  const logoSrc = "https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/logo.jpeg?alt=media&token=bcbc90c6-e960-4262-9b40-6f47337f1b74";
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -32,26 +35,44 @@ export function AppHeader() {
           <span className="text-xl font-bold">Jeet Galani</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-4 text-sm font-medium">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="transition-colors hover:text-primary"
-            >
-              {item.label}
-            </Link>
-          ))}
+        {/* Desktop Navigation and Controls */}
+        <div className="hidden md:flex items-center gap-4">
+          <nav className="flex items-center gap-4 text-sm font-medium">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="transition-colors hover:text-primary"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Image
+            src={logoSrc}
+            alt="Jeet Galani Logo"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
           {mounted && (
-            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme" className="ml-2">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           )}
-        </nav>
+        </div>
 
-        <div className="md:hidden flex items-center">
+        {/* Mobile Controls */}
+        <div className="md:hidden flex items-center gap-2">
+          <Image
+            src={logoSrc}
+            alt="Jeet Galani Logo"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
            {mounted && (
-            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme" className="mr-2">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           )}
