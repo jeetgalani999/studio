@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { ResumeDownloadButton } from '@/components/ResumeDownloadButton';
 import Link from 'next/link';
@@ -26,8 +27,8 @@ export function HeroSection() {
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-9890d.appspot.com/o/toolxox.com-ZzvLE.jpg?alt=media&token=78c23796-17f5-48c2-8aaf-b412335e828c"
             alt="Jeet Galani - Mobile App Developer"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className="rounded-full object-cover shadow-lg"
             data-ai-hint="portrait"
             priority
